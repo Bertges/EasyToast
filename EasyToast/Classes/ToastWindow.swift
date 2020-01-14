@@ -181,7 +181,7 @@ class ToastWindow: UIWindow {
             UIView.animate(withDuration: EasyToastConfiguration.animationDuration, delay: 0, usingSpringWithDamping: EasyToastConfiguration.dampingRatio, initialSpringVelocity: EasyToastConfiguration.initialSpringVelocity, options: UIViewAnimationOptions(), animations: {
                 self?.toastView.frame = self?.toastStartPosition() ?? CGRect.zero
             }) { (success) in
-                guard self = self else { return }
+                guard let self = self else { return }
                 self.isHidden = true
                 self.oldWindow?.makeKeyAndVisible()
                 self.resignKey()
